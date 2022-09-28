@@ -1,0 +1,68 @@
+﻿<Window x:Class="GuestInfoEntry.Show"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuestInfoEntry"
+        mc:Ignorable="d"
+        Title="Show" Height="458.687" Width="820.85" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Margin="-4,0,-4,8" Background="#FF3393E2">
+        <ListView x:Name="lstAll" HorizontalAlignment="Left" Height="406" Margin="10,39,0,0" VerticalAlignment="Top" Width="802" Opacity="0.95">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Image" Width="60">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image  HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Center" Width="Auto" Source="{Binding ImageShow}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="First Name" Width="70" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Last Name" Width="70" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Gender" Width="50" DisplayMemberBinding="{Binding Gender}"/>
+                    <GridViewColumn Header="Age" Width="40" DisplayMemberBinding="{Binding Age}"/>
+                    <GridViewColumn Header="Email" Width="70" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="Contact No" Width="70" DisplayMemberBinding="{Binding ContactNo}"/>
+                    <GridViewColumn Header="Room Type" Width="70" DisplayMemberBinding="{Binding RoomType}"/>
+                    <GridViewColumn Header="Check In" Width="60" DisplayMemberBinding="{Binding CheckIn}"/>
+                    <GridViewColumn Header="Check Out" Width="60" DisplayMemberBinding="{Binding CheckOut}"/>
+                    <GridViewColumn Header="Edit" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Edit"  x:Name="Edit" Width="37" CommandParameter="{Binding}" Background="#FF71D80D" Click="Edit_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Delete" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" x:Name="Delete" CommandParameter="{Binding}" Background="Red" Click="Delete_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="View" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="View"  x:Name="View" Width="37" CommandParameter="{Binding}" Background="#FF71D80D" Click="View_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="13,6,0,0" TextWrapping="Wrap" Text="All Guests Information:" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <Button x:Name="btnBack" Content="" HorizontalAlignment="Left" Margin="742,6,0,0" VerticalAlignment="Top" Width="32" Height="28" Click="backList_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="Feature-Iamge36.jpg" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnExitMW" Content="" HorizontalAlignment="Left" Margin="779,5,0,0" VerticalAlignment="Top" Width="33" Height="29" FontSize="25" Foreground="#FFE81A1A" Click="Button_Click_1">
+            <Button.Background>
+                <ImageBrush ImageSource="Exit-button-icon-png.jpg" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
